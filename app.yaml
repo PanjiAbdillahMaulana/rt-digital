@@ -3,6 +3,14 @@ runtime: php82 # Replace with php74 to use PHP 7.4
 runtime_config: 
   document_root: .
 
+
+automatic_scaling:
+  target_cpu_utilization: 0.80
+  target_throughput_utilization: 0.80
+  min_instances: 1
+  max_instances: 5
+  cool_down_period_sec: 60
+
 handlers:
 # Serve images as static resources.
 - url: /(.+\.(gif|png|jpg|css|js|svg|ico))$
