@@ -20,5 +20,5 @@ entrypoint:
 env_variables:
   CLOUDSQL_USER: root
   CLOUDSQL_DB: rt_digital
-  CLOUDSQL_PASSWORD: IF@k9ls?l[?g2)K#
-  CLOUDSQL_DSN: /cloudsql/rt-digital-402110:us-west1:rt-digital
+  CLOUDSQL_PASSWORD: SX_Pz|%?rF'J:rid
+  CLOUDSQL_DSN: /cloudsql/rt-digital-402113:asia-southeast2:rt-digital
