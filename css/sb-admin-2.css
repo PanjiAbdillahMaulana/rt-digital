@@ -1,0 +1,31 @@
+.button-style{
+  background-color: rgba(1, 145, 71, 0.5);
+  color: white !important;
+}
+
+.button-style:hover{
+  background-color: rgba(1, 145, 71, 1);
+}
+
+.button-style-3{
+  background-color: rgba(1, 145, 71, 0.5);
+  color: white !important;
+  cursor:default;
+  text-decoration: none;
+}
+
+.button-style-3:hover{
+  text-decoration: none;
+}
+
+.border-left-costum{
+  border-left: 10px solid #A6BB8D;
+}
+
+.border-left-costum-2{
+  border-left: 10px solid #61876E;
+}
+
+.border-left-costum-3{
+  border-left: 10px solid #3C6255;
+}

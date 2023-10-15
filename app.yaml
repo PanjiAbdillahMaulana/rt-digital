@@ -1,0 +1,23 @@
+runtime: php82 # Replace with php74 to use PHP 7.4
+
+runtime_config: 
+  document_root: .
+
+handlers:
+# Serve images as static resources.
+- url: /(.+\.(gif|png|jpg|css|js|svg|ico))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg|css|js|svg|ico)$
+
+# Serve your app through a front controller at index.php or public/index.php.
+- url: .*
+  script: auto
+
+entrypoint:
+  serve function/function.php
+
+env variables:
+  CLOUDSQL USER: root
+  CLOUDSQL DB: rt_digital
+  CLOUDSQL_PASSWORD: IF@k9ls?l[?g2)K#
+  CLOUDSQL_DSN: /cloudsql/rt-digital-402110:us-west1:rt-digital
