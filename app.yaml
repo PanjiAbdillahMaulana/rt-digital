@@ -17,7 +17,7 @@ entrypoint:
   serve handler.php
 
 env_variables:
-  CLOUDSQL USER: root
-  CLOUDSQL DB: rt_digital
+  CLOUDSQL_USER: root
+  CLOUDSQL_DB: rt_digital
   CLOUDSQL_PASSWORD: IF@k9ls?l[?g2)K#
   CLOUDSQL_DSN: /cloudsql/rt-digital-402110:us-west1:rt-digital
