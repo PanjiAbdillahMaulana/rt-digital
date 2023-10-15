@@ -11,8 +11,8 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
     case '/index.php':
         require 'index.php';
         break;
-    case '/aktivasi.php':
-            require 'aktivasi.php';
+    case '/aktivasi-admin.php':
+            require 'aktivasi-admin.php';
             break;
     case '/cetak-SKTM.php':
             require 'cetak-SKTM.php';
