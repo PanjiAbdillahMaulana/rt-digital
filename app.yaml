@@ -16,7 +16,7 @@ handlers:
 entrypoint:
   serve function/function.php
 
-env variables:
+env_variables:
   CLOUDSQL USER: root
   CLOUDSQL DB: rt_digital
   CLOUDSQL_PASSWORD: IF@k9ls?l[?g2)K#
