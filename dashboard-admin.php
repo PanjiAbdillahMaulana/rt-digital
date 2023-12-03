@@ -15,7 +15,7 @@ $jumlah_aktivasi = query("SELECT COUNT(*) FROM warga WHERE status_akun = 'belum 
 $data_jumlah_aktivasi = $jumlah_aktivasi[0]["COUNT(*)"];
 
 // Mengambil data warga untuk ditampilkan
-$datas = query("SELECT * FROM `warga` WHERE status_akun = 'aktif'");
+$datas = query("SELECT * FROM `warga` WHERE status_akun = 'aktif' LIMIT 5;");
 ?>
 
 <!DOCTYPE html>
@@ -84,10 +84,10 @@ $datas = query("SELECT * FROM `warga` WHERE status_akun = 'aktif'");
             </li>
 
 
-            <li class="nav-item">
-                <a class="nav-link" href="pengaturan-admin.html">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Pengaturan</span>
+            <li class="nav-item ">
+                <a class="nav-link" href="list-penduduk.php">
+                    <i class="bi bi-people"></i>
+                    <span>Penduduk</span>
                 </a>
             </li>
 
@@ -208,6 +208,7 @@ $datas = query("SELECT * FROM `warga` WHERE status_akun = 'aktif'");
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>No.</th>
                                             <th>NIK</th>
                                             <th>Nama</th>
                                             <th>Jenis Kelamin</th>
@@ -217,8 +218,11 @@ $datas = query("SELECT * FROM `warga` WHERE status_akun = 'aktif'");
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($datas as $data) : ?>
+                                        <?php 
+                                        $counter = 1;
+                                        foreach($datas as $data) : ?>
                                             <tr>
+                                                <td><?= $counter++; ?></td> 
                                                 <td><?= $data["NIK"] ?></td>
                                                 <td><?= $data["nama"] ?></td>
                                                 <td><?= $data["jenis_kelamin"] ?></td>                                               

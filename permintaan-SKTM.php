@@ -75,9 +75,9 @@ $semua_data_permintaan = query("SELECT * FROM `permintaan_surat` WHERE `status` 
             </li>
 
             <li class="nav-item ">
-                <a class="nav-link" href="pengaturan-admin.html">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Pengaturan</span>
+                <a class="nav-link" href="list-penduduk.php">
+                    <i class="bi bi-people"></i>
+                    <span>Penduduk</span>
                 </a>
             </li>
 

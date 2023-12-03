@@ -103,7 +103,7 @@ require 'function/function.php';
 
             <div class="mb-3 px-5">
                 <label for="status_pernikahan">Status Pernikahan</label>
-                <select class="form-select" aria-label="Default select example" id="status_pernikahan" name="status_pernikahan" required name="status_pernikahan">
+                <select class="form-select" aria-label="Default select example" id="status_pernikahan" name="status_pernikahan" required>
                     <option selected>Belum Menikah</option>
                     <option value="Sudah Menikah">Sudah Menikah</option>
                     <option value="Janda/Duda">Janda/Duda</option>

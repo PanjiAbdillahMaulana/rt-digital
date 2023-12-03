@@ -20,16 +20,16 @@ function query($query){
 
 function registrasi($data){
 	global $conn;
-	$NIK = $data['NIK'];
-	$nama = $data['nama'];
-	$agama = $data['agama'];
-	$tempat_lahir = $data['tempat_lahir'];
-	$tanggal_lahir = $data['tanggal_lahir'];
-	$golongan_darah = $data['golongan_darah'];
-	$jenis_kelamin = $data['jenis_kelamin'];
-	$pendidikan = $data['pendidikan'];
-	$pekerjaan = $data['pekerjaan'];
-	$status_pernikahan = $data['status_pernikahan'];
+    $NIK = mysqli_real_escape_string($conn, $data['NIK']);
+    $nama = mysqli_real_escape_string($conn, $data['nama']);
+    $agama = mysqli_real_escape_string($conn, $data['agama']);
+    $tempat_lahir = mysqli_real_escape_string($conn, $data['tempat_lahir']);
+    $tanggal_lahir = mysqli_real_escape_string($conn, $data['tanggal_lahir']);
+    $golongan_darah = mysqli_real_escape_string($conn, $data['golongan_darah']);
+    $jenis_kelamin = mysqli_real_escape_string($conn, $data['jenis_kelamin']);
+    $pendidikan = mysqli_real_escape_string($conn, $data['pendidikan']);
+    $pekerjaan = mysqli_real_escape_string($conn, $data['pekerjaan']);
+    $status_pernikahan = mysqli_real_escape_string($conn, $data['status_pernikahan']);
 	$password = mysqli_real_escape_string($conn,$data["password"]);
 	$password2 = mysqli_real_escape_string($conn,$data["re_password"]);
 	$status = "belum aktif";
@@ -112,6 +112,37 @@ function permintaanSurat($data){
 
 	mysqli_query($conn, "INSERT INTO permintaan_surat(`id_warga`, `alasan`, `status`, `jenis_surat`, `nama_surat`)
 	VALUES ('$id_warga', '$alasan', '$status', '$jenis_surat', '$nama_surat')");
+
+	return mysqli_affected_rows($conn);
+}
+
+function update_akun($data){
+	global $conn;
+	$id = mysqli_real_escape_string($conn, $data['id']);
+    $nama = mysqli_real_escape_string($conn, $data['nama']);
+    $agama = mysqli_real_escape_string($conn, $data['agama']);
+    $tempat_lahir = mysqli_real_escape_string($conn, $data['tempat_lahir']);
+    $tanggal_lahir = mysqli_real_escape_string($conn, $data['tanggal_lahir']);
+    $golongan_darah = mysqli_real_escape_string($conn, $data['golongan_darah']);
+    $jenis_kelamin = mysqli_real_escape_string($conn, $data['jenis_kelamin']);
+    $pendidikan = mysqli_real_escape_string($conn, $data['pendidikan']);
+    $pekerjaan = mysqli_real_escape_string($conn, $data['pekerjaan']);
+    $status_pernikahan = mysqli_real_escape_string($conn, $data['status_pernikahan']);
+
+	$query = "UPDATE warga 
+			SET 
+				nama = '$nama',
+				agama = '$agama',
+				tempat_lahir = '$tempat_lahir',
+				tanggal_lahir = '$tanggal_lahir',
+				golongan_darah = '$golongan_darah',
+				jenis_kelamin = '$jenis_kelamin',
+				pendidikan = '$pendidikan',
+				pekerjaan = '$pekerjaan',
+				status_pernikahan = '$status_pernikahan'
+			WHERE id = $id;";
+
+	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);
 }
