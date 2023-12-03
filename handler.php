@@ -62,6 +62,12 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
     case '/function/logout.php':
         require __DIR__.'/function/logout.php';
         break;
+    case '/list-penduduk.php':
+        require __DIR__.'/list-penduduk.php';
+        break;
+    case '/update-akun.php':
+        require __DIR__.'/update-akun.php';
+        break;
     default:
         http_response_code(404);
         echo @parse_url($_SERVER['REQUEST_URI'])['path']; 
